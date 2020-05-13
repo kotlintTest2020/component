@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.liangjz.test.myapplication.view.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:show_view="left_btn|right_btn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpage"
+                android:layout_width="match_parent"
+                android:layout_height="330dp"/>
+
+            <com.liangjz.test.myapplication.view.MyTextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="123"
+                app:text="test text" />
+
+            <com.liangjz.test.myapplication.view.CanvasView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                app:color="@color/colorPrimaryDark" />
+        </LinearLayout>
+</LinearLayout>

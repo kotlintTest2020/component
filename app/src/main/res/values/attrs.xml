@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyTextView">
+        <attr name="text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CanvasView">
+        <attr name="color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="HeaderView">
+        <attr name="show_view" >
+            <flag name="left_btn" value="1"/>
+            <flag name="center_tv" value="2"/>
+            <flag name="right_btn" value="4"/>
+        </attr>
+    </declare-styleable>
+</resources>

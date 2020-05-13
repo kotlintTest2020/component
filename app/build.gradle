@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion compile_sdk_version.toInteger()
+    buildToolsVersion build_tools_version
+    defaultConfig {
+        applicationId "com.liangjz.test.myapplication"
+        minSdkVersion min_sdk_version.toInteger()
+        targetSdkVersion target_sdk_version.toInteger()
+        versionCode 1
+        versionName "1.0"
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions("map")
+    productFlavors{
+        guangzhou{
+            dimension "map"
+        }
+        sichuan{
+            dimension "map"
+        }
+    }
+    greendao{
+        schemaVersion 1
+        daoPackage 'com.liangjz.test.myapplication.model.dao'
+        targetGenDir 'src/main/java'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50'
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    if(!loginRunAlone.toBoolean()){
+        implementation project(path: ':login')
+    }
+}

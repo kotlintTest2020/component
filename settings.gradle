@@ -1,0 +1,2 @@
+include ':app', ':test', ':lib', ':login', ':news'
+rootProject.name='My Application'
