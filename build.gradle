@@ -8,11 +8,11 @@ buildscript {
         jcenter()
 //        maven { url 'http://localhost:8081/repository/maven-public/' }
 
-        maven { url'https://maven.aliyun.com/repository/public/' }
-        maven { url'https://maven.aliyun.com/repository/google/' }
-        maven { url'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url'https://maven.aliyun.com/repository/central/' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 
 
     }
@@ -35,11 +35,11 @@ allprojects {
         jcenter()
 //        maven { url 'http://localhost:8081/repository/maven-public/' }
 
-        maven { url'https://maven.aliyun.com/repository/public/' }
-        maven { url'https://maven.aliyun.com/repository/google/' }
-        maven { url'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url'https://maven.aliyun.com/repository/central/' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 }
 
