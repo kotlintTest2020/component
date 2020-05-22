@@ -1,4 +1,4 @@
-package com.liangjz.test.service
+package com.liangjz.test.api
 
 import com.liangjz.test.bean.PicBean
 import io.reactivex.Observable

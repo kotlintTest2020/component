@@ -1,6 +1,6 @@
 package com.liangjz.test.view
 
-import android.content.Intent
+import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -9,22 +9,27 @@ import org.junit.Test
 class Test {
     @Test
     fun test() {
-        Observable.just("h").subscribe(object:Observer<String>{
+        var observable : Observable<String> = Observable.just("g")
+        observable.subscribe(object:Observer<String>{
             override fun onComplete() {
-                print("complete")
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onSubscribe(d: Disposable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onNext(t: String) {
-                print(t)
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onError(e: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
         })
+
     }
 
 }
+

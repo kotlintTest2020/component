@@ -20,6 +20,6 @@ class NewsViewmodel : ViewModel() {
         for(i in 0..20){
             mNewsList.add(NewsBean("title$i","subtitle$i","time$i","content$i"))
         }
-        mLiveData!!.postValue(mNewsList)
+        mLiveData?.postValue(mNewsList)
     }
 }
