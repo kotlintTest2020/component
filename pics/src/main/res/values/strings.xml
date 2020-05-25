@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pics</string>
+    <string name="share_pic_name">image</string>
 </resources>

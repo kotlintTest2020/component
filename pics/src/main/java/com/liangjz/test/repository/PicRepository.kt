@@ -8,7 +8,7 @@ import io.reactivex.Observable
 
 class PicRepository : BaseRepository(){
      fun <T> getPics() : Observable<PicBean>? {
-        var observable : Observable<PicBean>? = RetrofitHelper.instance.create(PicService::class.java)?.getPic(10)?.compose(schedulerTransform())
+        var observable : Observable<PicBean>? = RetrofitHelper.instance.create(PicService::class.java)?.getPic(20)?.compose(schedulerTransform())
          return observable
     }
 }
