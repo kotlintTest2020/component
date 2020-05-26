@@ -3,7 +3,6 @@ package com.liangjz.test.myapplication.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 
 public class MyIntentService extends IntentService {
     public MyIntentService(){
@@ -25,7 +24,7 @@ public class MyIntentService extends IntentService {
     }
 
     @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
+    protected void onHandleIntent( Intent intent) {
         System.out.println("MyIntentService onHandleIntent");
         try {
             Thread.sleep(5000);
@@ -35,7 +34,6 @@ public class MyIntentService extends IntentService {
         System.out.println("MyIntentService onHandleIntent finish");
     }
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return super.onBind(intent);

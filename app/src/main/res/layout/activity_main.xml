@@ -4,32 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <com.liangjz.test.myapplication.view.HeaderView
-        android:id="@+id/header_view"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:show_view="left_btn|right_btn" />
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewpage"
-                android:layout_width="match_parent"
-                android:layout_height="330dp"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday" />
 
-            <com.liangjz.test.myapplication.view.MyTextView
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:text="123"
-                app:text="test text" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday" />
+    </com.google.android.material.tabs.TabLayout>
 
-            <com.liangjz.test.myapplication.view.CanvasView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
-                app:color="@color/colorPrimaryDark" />
-        </LinearLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpage2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"/>
 </LinearLayout>

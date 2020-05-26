@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -22,7 +21,7 @@ public class CanvasView extends View {
         super(context);
     }
 
-    public CanvasView(Context context, @Nullable AttributeSet attrs) {
+    public CanvasView(Context context,  AttributeSet attrs) {
         super(context, attrs);
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CanvasView);
         int color = array.getColor(R.styleable.CanvasView_color, Color.WHITE);
@@ -39,11 +38,11 @@ public class CanvasView extends View {
         path = new Path();
     }
 
-    public CanvasView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CanvasView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public CanvasView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public CanvasView(Context context,  AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

@@ -6,7 +6,6 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import androidx.core.util.Pair
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -20,10 +19,10 @@ import com.liangjz.test.viewmodel.PicsViewmodel
 class PicsActivity : AppCompatActivity() , PicAdapter.OnItemClickListener {
     override fun onItemClick(view : ImageView, position: Int, images: List<Image>?) {
         var i = Intent(this,DetailActivity::class.java)
-        var bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this, Pair(view,getString(R.string.share_pic_name))).toBundle()
+        var bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view,getString(R.string.share_pic_name)).toBundle()
         bundle?.putString("url",images?.get(position)?.url)
         i.putExtras(bundle)
-        startActivity(i)
+        startActivity(i,bundle)
     }
 
     @BindView(R.id.pic_recycleview)

@@ -24,4 +24,9 @@ class DetailActivity : AppCompatActivity() {
         var url = bundle.getString("url")
         Glide.with(this).load("http://www.bing.com$url").into(mDetailIv)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAfterTransition()
+    }
 }

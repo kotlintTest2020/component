@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -17,15 +16,15 @@ public class MyTextView extends TextView {
         super(context);
     }
 
-    public MyTextView(Context context, @Nullable AttributeSet attrs) {
+    public MyTextView(Context context,  AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyTextView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public MyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public MyTextView(Context context,  AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

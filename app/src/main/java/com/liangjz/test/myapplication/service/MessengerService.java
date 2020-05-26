@@ -7,7 +7,6 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.support.annotation.Nullable;
 
 public class MessengerService extends Service {
     Messenger messenger = new Messenger(new Handler(){
@@ -29,7 +28,6 @@ public class MessengerService extends Service {
             }
         }
     });
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return messenger.getBinder();

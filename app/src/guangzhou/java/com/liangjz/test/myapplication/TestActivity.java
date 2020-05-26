@@ -13,7 +13,6 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.support.annotation.Nullable;
 
 import com.liangjz.test.myapplication.service.CalcuService;
 import com.liangjz.test.myapplication.service.IMyAidlInterface;
@@ -28,7 +27,7 @@ public class TestActivity extends Activity{
     IMyAidlInterface iinterface;
     private MyReceiver myReceiver;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         registerReceiver(myReceiver = new MyReceiver(),new IntentFilter(BROCAST));
         setContentView(R.layout.activity_main);

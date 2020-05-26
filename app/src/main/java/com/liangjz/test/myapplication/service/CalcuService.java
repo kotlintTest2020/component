@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.annotation.Nullable;
 
 import com.liangjz.test.myapplication.TestActivity;
 import com.liangjz.test.myapplication.bean.Phone;
@@ -17,7 +16,6 @@ import java.util.List;
 public class CalcuService extends Service {
     private final static String TAG = CalcuService.class.getSimpleName();
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
 
