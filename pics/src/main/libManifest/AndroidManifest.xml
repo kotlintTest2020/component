@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liangjz.test.view" >
+    <application>
+    <activity android:name="com.liangjz.test.view.pics.PicsActivity">
+    </activity>
+    <activity android:name=".pics.DetailActivity"
+        android:theme="@style/NoTitleFullScreenTheme"/>
+    </application>
+</manifest>
