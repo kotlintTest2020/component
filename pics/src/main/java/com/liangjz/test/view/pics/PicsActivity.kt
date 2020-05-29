@@ -4,19 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.liangjz.test.bean.Image
+import com.liangjz.test.lib.base.BaseActivigty
 import com.liangjz.test.view.R
 import com.liangjz.test.viewmodel.PicsViewmodel
 
-class PicsActivity : AppCompatActivity() , PicAdapter.OnItemClickListener {
+class PicsActivity : BaseActivigty() , PicAdapter.OnItemClickListener {
     override fun onItemClick(view : ImageView, position: Int, images: List<Image>?) {
         var i = Intent(this,DetailActivity::class.java)
         var bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view,getString(R.string.share_pic_name)).toBundle()
@@ -25,23 +23,21 @@ class PicsActivity : AppCompatActivity() , PicAdapter.OnItemClickListener {
         startActivity(i,bundle)
     }
 
-    @BindView(R.id.pic_recycleview)
     lateinit var mRecycleview : RecyclerView
     lateinit var adapter: PicAdapter
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_pics)
-        ButterKnife.bind(this)
-        initUi()
-        getData()
     }
-
-    private fun initUi() {
+    override fun bindView() {
+        mRecycleview = findViewById(R.id.pic_recycleview)
+    }
+    override fun initData() {
         adapter =  PicAdapter(null)
         adapter.addOnClickListener(this)
         val layoutManager = GridLayoutManager(this,2)
         mRecycleview.layoutManager = layoutManager
         mRecycleview.adapter = adapter
+        getData()
     }
 
     private fun getData() {

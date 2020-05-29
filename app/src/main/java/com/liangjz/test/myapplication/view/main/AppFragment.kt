@@ -5,21 +5,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.liangjz.test.lib.base.BaseFragment
 import com.liangjz.test.myapplication.R
+import com.liangjz.test.myapplication.viewmodel.AppViewmodel
 
-class AppFragment : Fragment(){
+class AppFragment : BaseFragment(){
+    lateinit var mRecycleview : RecyclerView
+    lateinit var mAdapter : AppAdapter
 
+    override fun createView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var view = layoutInflater.inflate(R.layout.fragment_app,container,false)
+        return view
+    }
+    override fun bindView() {
+        mRecycleview = findViewById(R.id.app_rv)
+    }
     companion object{
-        lateinit var instance : AppFragment
+        var instance = AppFragment()
         fun getInstance() : Fragment{
-            if(instance == null){
-                instance = AppFragment()
-            }
             return instance
         }
     }
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view = layoutInflater.inflate(R.layout.fragment_app,container,false)
-        return view
+
+    override fun initData() {
+        mAdapter = AppAdapter()
+        var layoutManage = GridLayoutManager(this.context,3)
+        mRecycleview.layoutManager = layoutManage
+        mRecycleview.adapter = mAdapter
+        var viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(this.activity!!.application)).get(AppViewmodel::class.java)
+        viewModel.getAppList().observe(this, Observer{
+            mAdapter.setAppData(it)
+        })
     }
 }

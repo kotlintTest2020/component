@@ -1,12 +1,17 @@
 package com.liangjz.test.login
 
-import android.app.Activity
 import android.os.Bundle
+import com.liangjz.test.lib.base.BaseActivigty
 
-class MainActivity : Activity() {
+class MainActivity : BaseActivigty() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
     }
+    override fun initData() {
+    }
+
+    override fun bindView() {
+    }
+
 }

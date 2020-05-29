@@ -1,24 +1,24 @@
 package com.liangjz.test.myapplication.view.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.liangjz.test.lib.base.BaseActivigty
 import com.liangjz.test.myapplication.R
 
-class MainActivity :AppCompatActivity(){
-    @BindView(R.id.tabLayout)
+class MainActivity : BaseActivigty(){
     lateinit var tabLayout :TabLayout
-    @BindView(R.id.viewpage2)
     lateinit var viewPager2 :ViewPager2
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onCreateView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
         initUi()
+    }
+
+    override fun bindView() {
+        tabLayout = findViewById(R.id.tabLayout)
+        viewPager2 = findViewById(R.id.viewpage2)
     }
 
     private fun initUi() {

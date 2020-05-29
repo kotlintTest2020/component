@@ -1,24 +1,23 @@
 package com.liangjz.test.view.pics
 
 import android.os.Bundle
-import android.view.Window
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.bumptech.glide.Glide
+import com.liangjz.test.lib.base.BaseActivigty
 import com.liangjz.test.view.R
 
-class DetailActivity : AppCompatActivity() {
-    @BindView(R.id.detail_iv)
+class DetailActivity : BaseActivigty() {
     lateinit var mDetailIv : ImageView
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onCreateView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_detail)
-        ButterKnife.bind(this)
+    }
+    override fun bindView() {
+        mDetailIv = findViewById(R.id.detail_iv)
+    }
+    override fun initData() {
         getData()
     }
-
     private fun getData() {
         var bundle = intent.extras
         var url = bundle.getString("url")
