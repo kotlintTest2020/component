@@ -9,11 +9,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.launcher.ARouter
 import com.liangjz.test.lib.base.BaseFragment
+import com.liangjz.test.lib.router.ARouterPath
 import com.liangjz.test.myapplication.R
 import com.liangjz.test.myapplication.viewmodel.AppViewmodel
 
-class AppFragment : BaseFragment(){
+class AppFragment : BaseFragment(),AppAdapter.OnItemClickListener{
+
+    override fun onItemClick(position: Int) {
+        ARouter.getInstance().build(ARouterPath.Pic.picActivity).navigation()
+    }
+
     lateinit var mRecycleview : RecyclerView
     lateinit var mAdapter : AppAdapter
 
@@ -33,6 +40,7 @@ class AppFragment : BaseFragment(){
 
     override fun initData() {
         mAdapter = AppAdapter()
+        mAdapter.setOnItemClickListener(this)
         var layoutManage = GridLayoutManager(this.context,3)
         mRecycleview.layoutManager = layoutManage
         mRecycleview.adapter = mAdapter

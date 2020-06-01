@@ -4,16 +4,17 @@ import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.liangjz.test.lib.base.BaseActivigty
+import com.liangjz.test.lib.base.BaseActivity
 import com.liangjz.test.myapplication.R
 
-class MainActivity : BaseActivigty(){
+class MainActivity : BaseActivity(){
+
+
     lateinit var tabLayout :TabLayout
     lateinit var viewPager2 :ViewPager2
 
     override fun onCreateView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
-        initUi()
     }
 
     override fun bindView() {
@@ -21,6 +22,9 @@ class MainActivity : BaseActivigty(){
         viewPager2 = findViewById(R.id.viewpage2)
     }
 
+    override fun initData() {
+        initUi()
+    }
     private fun initUi() {
         viewPager2.adapter = MainFragmentAdapter(this)
         TabLayoutMediator(

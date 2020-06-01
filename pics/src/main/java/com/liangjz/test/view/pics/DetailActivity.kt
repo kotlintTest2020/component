@@ -3,10 +3,10 @@ package com.liangjz.test.view.pics
 import android.os.Bundle
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.liangjz.test.lib.base.BaseActivigty
+import com.liangjz.test.lib.base.BaseActivity
 import com.liangjz.test.view.R
 
-class DetailActivity : BaseActivigty() {
+class DetailActivity : BaseActivity() {
     lateinit var mDetailIv : ImageView
 
     override fun onCreateView(savedInstanceState: Bundle?) {

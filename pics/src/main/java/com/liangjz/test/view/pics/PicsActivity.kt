@@ -9,12 +9,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.liangjz.test.bean.Image
-import com.liangjz.test.lib.base.BaseActivigty
+import com.liangjz.test.lib.base.BaseActivity
+import com.liangjz.test.lib.router.ARouterPath
 import com.liangjz.test.view.R
 import com.liangjz.test.viewmodel.PicsViewmodel
 
-class PicsActivity : BaseActivigty() , PicAdapter.OnItemClickListener {
+@Route(path=ARouterPath.Pic.picActivity)
+class PicsActivity : BaseActivity() , PicAdapter.OnItemClickListener {
     override fun onItemClick(view : ImageView, position: Int, images: List<Image>?) {
         var i = Intent(this,DetailActivity::class.java)
         var bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view,getString(R.string.share_pic_name)).toBundle()

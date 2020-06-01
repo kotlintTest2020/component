@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.liangjz.test.bean.NewsBean
-import com.liangjz.test.lib.base.BaseActivigty
+import com.liangjz.test.lib.base.BaseActivity
 import com.liangjz.test.view.R
 import com.liangjz.test.viewmodel.NewsViewmodel
 
-class NewsActivity : BaseActivigty() {
+class NewsActivity : BaseActivity() {
 
     lateinit var mRecyclerView : RecyclerView
     lateinit var mAdapter : NewsAdapter

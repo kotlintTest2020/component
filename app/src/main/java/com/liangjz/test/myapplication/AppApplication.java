@@ -3,19 +3,19 @@ package com.liangjz.test.myapplication;
 import android.app.Application;
 import android.os.Environment;
 
+import com.liangjz.test.lib.BaseApplication;
 import com.squareup.leakcanary.LeakCanary;
 import com.liangjz.test.myapplication.model.DatabaseManager;
 
 import java.io.File;
 import java.io.IOException;
 
-public class AppApplication extends Application {
+public class AppApplication extends BaseApplication{
     @Override
     public void onCreate() {
         super.onCreate();
 //        LeakCanary.install(this);
         DatabaseManager.getInstance().init(getApplicationContext());
-        
     }
 
     @Override
